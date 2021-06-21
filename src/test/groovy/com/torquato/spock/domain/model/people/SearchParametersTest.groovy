@@ -16,11 +16,12 @@ class SearchParametersTest extends TestSupport {
         then: 'There is no violations'
         violations.isEmpty()
 
-        where: 'Page must be greater than 0 and pageSize must be greater than 4'
+        where: 'Page must be greater than 0 and pageSize must be greater than 4 and less than 501'
         page | pageSize
         1    | 5
         10   | 10
         2    | 50
+        2    | 500
     }
 
     @Unroll
@@ -34,7 +35,7 @@ class SearchParametersTest extends TestSupport {
         then: 'There is violations'
         !violations.isEmpty()
 
-        where: 'Page must be less than 1 or pageSize must be less than 5'
+        where: 'Page must be less than 1 or pageSize must be less than 5 and greater than 500'
         page | pageSize
         0    | 5
         -1   | 5
@@ -44,6 +45,7 @@ class SearchParametersTest extends TestSupport {
         1    | 1
         1    | 0
         1    | -1
+        1    | 501
     }
 
 }
