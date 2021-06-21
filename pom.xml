@@ -226,7 +226,7 @@
                 </executions>
                 <configuration>
                     <excludes>
-                        <exclude>**/*BddExampleApplication.class</exclude>
+                        <exclude>**/*SpockExampleApplication.class</exclude>
                     </excludes>
                     <rules>
                         <rule>
