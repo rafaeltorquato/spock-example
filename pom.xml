@@ -13,7 +13,8 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>spock-example</name>
     <description>
-        An example of Spock Framework + Spring for unit and integration tests. Behavior Driven Development (BDD) in Java Platform.
+        An example of Spock Framework + Spring for unit and integration tests. Behavior Driven Development (BDD) in Java
+        Platform.
     </description>
 
     <properties>
