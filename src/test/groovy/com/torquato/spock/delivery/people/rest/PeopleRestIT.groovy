@@ -56,31 +56,33 @@ class PeopleRestIT extends ITSupport {
         result.elements*.surname.count('Torquato') == 3
     }
 
+    @SuppressWarnings("unused")
     def setup() {
         def people = new People()
-        people.setName('Rafael');
+        people.setName('Rafael')
         people.setSurname('Torquato')
         mongoTemplate.save(people)
         people = new People()
-        people.setName('Rafael');
+        people.setName('Rafael')
         people.setSurname('Torquato')
         mongoTemplate.save(people)
         people = new People()
-        people.setName('Rafael');
+        people.setName('Rafael')
         people.setSurname('Torquato')
         mongoTemplate.save(people)
 
         people = new People()
-        people.setName('Rafael');
+        people.setName('Rafael')
         people.setSurname('Nascimento')
         mongoTemplate.save(people)
 
         people = new People()
-        people.setName('Rafael');
+        people.setName('Rafael')
         people.setSurname('Silva')
         mongoTemplate.save(people)
     }
 
+    @SuppressWarnings("unused")
     def cleanup() {
         mongoTemplate.dropCollection(People.class)
     }
