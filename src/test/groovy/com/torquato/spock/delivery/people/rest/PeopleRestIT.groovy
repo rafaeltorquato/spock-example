@@ -19,11 +19,16 @@ class PeopleRestIT extends ITSupport {
 
         when: 'Search is performed with given parameters'
         def queryParameters = toQueryString(searchParameter)
-        ResultPageDTO<PeopleDTO> result = get(PeoplesRest.PATH + queryParameters, ResultPageDTO.class, HttpStatus.OK) as ResultPageDTO<PeopleDTO>
+        ResultPageDTO<PeopleDTO> result = get(
+                PeoplesRest.PATH + queryParameters,
+                ResultPageDTO.class,
+                HttpStatus.OK
+        ) as ResultPageDTO<PeopleDTO>
 
-        then: 'Result list should have 5 peoples with name equals Rafael'
+        then: 'The result list should have 5 peoples'
         result.elements.size() == 5
-        result.elements*.name.count(searchParameter.name) == 5
+        and: 'everyone must have name equals Rafael'
+        result.elements*.name.count('Rafael') == 5
     }
 
     def 'A search by name and surname will return a list with 3 peoples with given name and surname'() {
@@ -37,12 +42,18 @@ class PeopleRestIT extends ITSupport {
 
         when: 'Search is performed with given parameters'
         def queryParameters = toQueryString(searchParameter)
-        ResultPageDTO<PeopleDTO> result = get(PeoplesRest.PATH + queryParameters, ResultPageDTO.class, HttpStatus.OK) as ResultPageDTO<PeopleDTO>
+        ResultPageDTO<PeopleDTO> result = get(
+                PeoplesRest.PATH + queryParameters,
+                ResultPageDTO.class,
+                HttpStatus.OK
+        ) as ResultPageDTO<PeopleDTO>
 
-        then: 'Result list should have 3 peoples with name Rafael and surname Torquato'
+        then: 'The result list should have 3 peoples'
         result.elements.size() == 3
-        result.elements*.name.count(searchParameter.name) == 3
-        result.elements*.surname.count(searchParameter.surname) == 3
+        and: 'everyone must have name equals Rafael'
+        result.elements*.name.count('Rafael') == 3
+        and: 'everyone must have surname equals Torquato'
+        result.elements*.surname.count('Torquato') == 3
     }
 
     def setup() {

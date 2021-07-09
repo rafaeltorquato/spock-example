@@ -17,4 +17,5 @@ public interface PeopleMapper {
     SearchParameters fromDTO(SearchParametersDTO dto);
 
     ResultPageDTO<PeopleDTO> toDTO(ResultPage<People> result);
+
 }

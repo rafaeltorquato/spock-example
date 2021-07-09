@@ -43,9 +43,11 @@ public class PeopleRepositoryMongoDb implements PeopleRepository {
 
     @AllArgsConstructor
     private static class InternalResultPage extends ResultPage<People> {
+
         private InternalResultPage(Long totalElements, List<People> elements) {
             super(totalElements, elements);
         }
+
     }
 
 }

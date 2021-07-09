@@ -3,14 +3,11 @@ package com.torquato.spock.domain.model.people
 import com.torquato.spock.support.TestSupport
 import spock.lang.Unroll
 
-import java.util.stream.Collectors
-
 class SearchParametersTest extends TestSupport {
 
     @Unroll
     def "Should create a valid SearchParameters with page equals #page and page size equals #pageSize"() {
         when: 'A search parameter is created'
-
         def parameters = new SearchParameters()
         parameters.page = page
         parameters.pageSize = pageSize

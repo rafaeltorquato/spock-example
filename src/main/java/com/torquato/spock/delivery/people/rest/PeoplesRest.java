@@ -1,6 +1,5 @@
 package com.torquato.spock.delivery.people.rest;
 
-
 import com.torquato.spock.delivery.people.facade.PeopleFacade;
 import com.torquato.spock.delivery.people.facade.dto.PeopleDTO;
 import com.torquato.spock.delivery.people.facade.dto.SearchParametersDTO;

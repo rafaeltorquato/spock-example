@@ -23,4 +23,5 @@ public class PeopleFacadeImpl implements PeopleFacade {
         ResultPage<People> result = peopleSearchService.search(mapper.fromDTO(searchParameters));
         return mapper.toDTO(result);
     }
+
 }

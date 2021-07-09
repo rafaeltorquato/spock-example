@@ -20,4 +20,5 @@ public class PeopleSearchServiceImpl implements PeopleSearchService {
     public ResultPage<People> search(SearchParameters searchParameters) {
         return peopleRepository.search(searchParameters);
     }
+
 }
